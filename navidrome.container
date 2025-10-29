@@ -1,0 +1,16 @@
+[Unit]
+Description=Navidrome Quadlet
+
+[Container]
+PublishPort=4533:4533
+Image=docker.io/deluan/navidrome:0.58.0
+ContainerName=navidrome
+Volume=/home/pascal/navidrome/music:/music:ro
+Volume=/home/pascal/navidrome/data:/data
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target
