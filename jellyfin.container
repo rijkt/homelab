@@ -1,0 +1,18 @@
+[Unit]
+Description=Jellyfin Quadlet
+
+[Container]
+PublishPort=7359:7359/udp
+PublishPort=8096:8096/tcp
+Image=docker.io/jellyfin/jellyfin:10.11.2
+ContainerName=jellyfin
+Volume=/home/pascal/jellyfin/media/:/media
+Volume=/home/pascal/jellyfin/jellyfin-cache:/cache
+Volume=/home/pascal/jellyfin/jellyfin-config:/config
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target default.target
