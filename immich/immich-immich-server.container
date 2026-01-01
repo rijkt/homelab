@@ -1,0 +1,15 @@
+[Unit]
+Requires=database.service redis.service
+After=database.service redis.service
+
+[Container]
+ContainerName=immich_server
+EnvironmentFile=.env
+Image=ghcr.io/immich-app/immich-server:v2.4.0
+Pod=immich.pod
+Volume=./library:/data
+Volume=/etc/localtime:/etc/localtime:ro
+
+[Service]
+ExecStartPre=/bin/sleep 2
+Restart=always
