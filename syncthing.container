@@ -1,5 +1,7 @@
 [Unit]
 Description=Syncthing Quadlet
+After=remote-fs.target
+Requires=remote-fs.target
 
 [Container]
 Image=docker.io/syncthing/syncthing:2.0.12

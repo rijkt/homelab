@@ -11,6 +11,7 @@ Volume=/home/pascal/navidrome/data:/data
 
 [Service]
 Restart=always
+ExecStartPre=/bin/sleep 2
 TimeoutStartSec=900
 
 [Install]
