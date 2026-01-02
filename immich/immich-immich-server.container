@@ -4,7 +4,6 @@ After=immich-redis.service immich-database.service
 
 [Container]
 ContainerName=immich_server
-EnvironmentFile=.env
 Image=ghcr.io/immich-app/immich-server:v2.4.0
 Pod=immich.pod
 Volume=/home/pascal/immich/library:/data
