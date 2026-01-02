@@ -9,6 +9,7 @@ Pod=immich.pod
 Volume=/home/pascal/immich/library:/data
 Volume=/etc/localtime:/etc/localtime:ro
 Environment=DB_HOSTNAME=immich_postgres
+Environment=REDIS_HOSTNAME=immich_redis
 
 [Service]
 ExecStartPre=/bin/sleep 2
