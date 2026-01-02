@@ -7,3 +7,4 @@ Volume=model-cache:/cache
 
 [Service]
 Restart=always
+MemoryMax=2G
