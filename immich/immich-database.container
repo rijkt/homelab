@@ -5,7 +5,7 @@ Environment=POSTGRES_DB=immich POSTGRES_INITDB_ARGS=--data-checksums POSTGRES_US
 Image=ghcr.io/immich-app/postgres:14-vectorchord0.4.3-pgvectors0.2.0
 Pod=immich.pod
 ShmSize=128mb
-Volume=./postgres:/var/lib/postgresql/data
+Volume=/home/pascal/immich/postgres:/var/lib/postgresql/data
 
 [Service]
 Restart=always
