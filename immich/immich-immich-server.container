@@ -1,6 +1,6 @@
 [Unit]
-Requires=database.service redis.service
-After=database.service redis.service
+Requires=immich-redis.container immich-database.container
+After=immich-redis.container immich-database.container
 
 [Container]
 ContainerName=immich_server
