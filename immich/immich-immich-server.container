@@ -4,7 +4,8 @@ After=immich-redis.service immich-database.service
 
 [Container]
 ContainerName=immich_server
-Image=ghcr.io/immich-app/immich-server:v2.4.1 # also update ml version
+# also update ml version
+Image=ghcr.io/immich-app/immich-server:v2.4.1
 Pod=immich.pod
 Volume=/home/pascal/immich/library:/data
 Volume=/etc/localtime:/etc/localtime:ro
