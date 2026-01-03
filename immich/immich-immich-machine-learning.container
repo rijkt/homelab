@@ -1,0 +1,9 @@
+[Container]
+ContainerName=immich_machine_learning
+Image=ghcr.io/immich-app/immich-machine-learning:v2.4.1
+Pod=immich.pod
+Volume=/home/pascal/immich/model-cache:/cache
+
+[Service]
+Restart=always
+MemoryMax=2G

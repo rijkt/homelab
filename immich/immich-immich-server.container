@@ -1,0 +1,17 @@
+[Unit]
+Requires=immich-redis.service immich-database.service
+After=immich-redis.service immich-database.service
+
+[Container]
+ContainerName=immich_server
+# also update ml version
+Image=ghcr.io/immich-app/immich-server:v2.4.1
+Pod=immich.pod
+Volume=/home/pascal/immich/library:/data
+Volume=/etc/localtime:/etc/localtime:ro
+Environment=DB_HOSTNAME=immich_postgres
+Environment=REDIS_HOSTNAME=immich_redis
+
+[Service]
+ExecStartPre=/bin/sleep 2
+Restart=always

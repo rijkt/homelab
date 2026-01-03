@@ -1,0 +1,11 @@
+[Container]
+ContainerName=immich_postgres
+Secret=immich_db_password,type=env,target=POSTGRES_PASSWORD
+Environment=POSTGRES_DB=immich POSTGRES_INITDB_ARGS=--data-checksums POSTGRES_USER=postgres
+Image=ghcr.io/immich-app/postgres:14-vectorchord0.4.3-pgvectors0.2.0
+Pod=immich.pod
+ShmSize=128mb
+Volume=/home/pascal/immich/postgres:/var/lib/postgresql/data
+
+[Service]
+Restart=always
