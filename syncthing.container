@@ -6,8 +6,8 @@ Image=docker.io/syncthing/syncthing:2.0.12
 ContainerName=syncthing
 PublishPort=46520:46520
 Environment=STGUIADDRESS=0.0.0.0:46520
-Environment=PUID=1000
-Environment=PGID=1000
+Environment=PUID=0
+Environment=PGID=0
 Volume=/home/pascal/syncthing/config:/var/syncthing
 Volume=/home/pascal/syncthing/shares:/mnt/shares
 Network=host
