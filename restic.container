@@ -1,0 +1,13 @@
+[Unit]
+Description=Restic Quadlet
+
+[Container]
+Image=docker.io/restic/restic:0.16.5
+ContainerName=restic
+Secret=restic_pw,type=env,target=RESTIC_PASSWORD
+Volume=/home/pascal/restic/repos/:/mnt/repos/
+
+[Service]
+Restart=always
+ExecStartPre=/bin/sleep 2
+TimeoutStartSec=900
