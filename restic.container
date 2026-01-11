@@ -2,7 +2,7 @@
 Description=Restic Quadlet
 
 [Container]
-Image=docker.io/restic/restic:0.17.3
+Image=docker.io/restic/restic:0.18.1
 ContainerName=restic
 Secret=restic_pw,type=env,target=RESTIC_PASSWORD
 Volume=/home/pascal/restic/repos/:/mnt/repos/
