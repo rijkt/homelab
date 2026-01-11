@@ -9,6 +9,5 @@ Volume=/home/pascal/restic/repos/:/mnt/repos/
 Exec=version
 
 [Service]
-Restart=always
 ExecStartPre=/bin/sleep 2
 TimeoutStartSec=900
