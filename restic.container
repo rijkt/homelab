@@ -7,9 +7,3 @@ ContainerName=restic
 Secret=restic_pw,type=env,target=RESTIC_PASSWORD
 Volume=/home/pascal/restic/repos/:/mnt/repos/
 Exec=list snapshots -r /mnt/repos/full-backup
-
-[Timer]
-OnCalendar=*-*-* 1:00:00
-
-[Install]
-WantedBy=timers.target
