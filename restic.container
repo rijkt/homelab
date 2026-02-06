@@ -7,4 +7,4 @@ ContainerName=restic
 Secret=restic_pw,type=env,target=RESTIC_PASSWORD
 Volume=/home/pascal/restic/repo/:/mnt/repo
 Volume=/home/pascal/restic/backup-targets/:/mnt/backup-targets:ro
-Exec=--verbose --skip-if-unchanged backup -r /mnt/repo /mnt/backup-targets/pascal /mnt/backup-targets/sync
+Exec=-r /mnt/repo --verbose --skip-if-unchanged backup /mnt/backup-targets/pascal /mnt/backup-targets/sync
