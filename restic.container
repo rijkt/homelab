@@ -1,0 +1,10 @@
+[Unit]
+Description=Restic Quadlet
+
+[Container]
+Image=docker.io/restic/restic:0.18.1
+ContainerName=restic
+Secret=restic_pw,type=env,target=RESTIC_PASSWORD
+Volume=/home/pascal/restic/repo/:/mnt/repo
+Volume=/home/pascal/restic/backup-targets/:/mnt/backup-targets:ro
+Exec=-r /mnt/repo --verbose backup --skip-if-unchanged /mnt/backup-targets/pascal /mnt/backup-targets/sync --exclude=\x23recycle
