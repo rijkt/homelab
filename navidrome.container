@@ -5,9 +5,13 @@ Description=Navidrome Quadlet
 PublishPort=4533:4533
 Image=docker.io/deluan/navidrome:0.60.3
 ContainerName=navidrome
+Environment=ND_BACKUP_PATH=/backup
+Environment=ND_BACKUP_SCHEDULE="0 3 * * *"
+Environment=ND_BACKUP_COUNT=7
 Volume=/home/pascal/navidrome/music:/music:ro
 Volume=/home/pascal/navidrome/enya-music:/enya-music:ro
 Volume=/home/pascal/navidrome/data:/data
+Volume=/home/pascal/navidrome/backups:/backup
 
 [Service]
 Restart=always
