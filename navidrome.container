@@ -3,7 +3,7 @@ Description=Navidrome Quadlet
 
 [Container]
 PublishPort=4533:4533
-Image=docker.io/deluan/navidrome:0.58.5
+Image=docker.io/deluan/navidrome:0.60.3
 ContainerName=navidrome
 Volume=/home/pascal/navidrome/music:/music:ro
 Volume=/home/pascal/navidrome/enya-music:/enya-music:ro
