@@ -7,7 +7,7 @@ Environment=DATABASE_URL=postgresql://docmost:$POSTGRES_PASSWORD@docmost_postgre
 Environment=REDIS_URL=redis://docmost_redis:6379
 Image=docker.io/docmost/docmost:0.25.3
 Pod=docmost.pod
-Volume=/home/pascal/docmost/docmost:/app/data/storage
+Volume=/home/pascal/docmost/docmost:/app/data/storage:rw,Z
 
 [Service]
 Restart=always
