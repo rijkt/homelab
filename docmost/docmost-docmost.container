@@ -3,8 +3,8 @@ ContainerName=docmost_docmost
 Secret=docmost_app_pw,type=env,target=APP_SECRET
 Secret=docmost_db_pw,type=env,target=POSTGRES_PASSWORD
 Environment=APP_URL=http://localhost:3000
-Environment=DATABASE_URL=postgresql://docmost:$POSTGRES_PASSWORD@db:5432/docmost
-Environment=REDIS_URL=redis://redis:6379
+Environment=DATABASE_URL=docmost_postgres://docmost:$POSTGRES_PASSWORD@db:5432/docmost
+Environment=REDIS_URL=docmost_redis://redis:6379
 Image=docker.io/docmost/docmost:0.25.3
 Pod=docmost.pod
 Volume=/home/pascal/docmost/docmost:/app/data/storage
