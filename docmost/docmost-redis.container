@@ -1,0 +1,11 @@
+[Container]
+ContainerName=docmost_redis
+# HealthCmd=redis-cli ping || exit 1
+Image=docker.io/library/redis:8
+Pod=docmost.pod
+PodmanArgs=--entrypoint=redis-server
+Exec=--appendonly yes --maxmemory-policy noeviction
+Volume=/home/pascal/docmost/redis_data:/data
+
+[Service]
+Restart=always
