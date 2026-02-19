@@ -1,6 +1,6 @@
 [Container]
 ContainerName=docmost_redis
-# HealthCmd=redis-cli ping || exit 1
+HealthCmd=redis-cli ping || exit 1
 Image=docker.io/library/redis:8
 Pod=docmost.pod
 PodmanArgs=--entrypoint=redis-server
