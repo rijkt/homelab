@@ -5,7 +5,7 @@ Secret=docmost_db_pw,type=env,target=POSTGRES_PASSWORD
 Environment=APP_URL=http://localhost:3000
 Environment=DATABASE_URL=postgresql://docmost:$POSTGRES_PASSWORD@docmost_postgres:5432/docmost
 Environment=REDIS_URL=redis://docmost_redis:6379
-Image=docker.io/docmost/docmost:0.23.2
+Image=docker.io/docmost/docmost:0.25.3
 Pod=docmost.pod
 Volume=/home/pascal/docmost/docmost:/app/data/storage
 
