@@ -11,5 +11,5 @@ Environment=PGHOST=docmost_postgres
 Environment=PGPORT=5432
 Volume=/home/pascal/docmost/backup/:/mnt/backup
 Entrypoint=/bin/bash
-Exec=-c 'pg_dump -c -U docmost |  gzip > /mnt/backup/docmost-db-$(date +%Y-%m-%d).tar.gz'
+Exec=-c 'pg_dump -c -U docmost | gzip > /mnt/backup/docmost-db-$(date +%%Y-%%m-%%d).tar.gz'
 Pod=docmost.pod
