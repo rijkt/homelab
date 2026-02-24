@@ -1,0 +1,10 @@
+[Container]
+ContainerName=docmost_postgres
+Secret=docmost_db_pw,type=env,target=POSTGRES_PASSWORD
+Environment=POSTGRES_DB=docmost POSTGRES_USER=docmost
+Image=docker.io/library/postgres:18
+Pod=docmost.pod
+Volume=/home/pascal/docmost/postgres:/var/lib/postgresql
+
+[Service]
+Restart=always

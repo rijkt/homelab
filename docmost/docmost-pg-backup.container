@@ -1,0 +1,16 @@
+[Unit]
+Description=Docmost Postgres Backup service
+
+[Container]
+Image=docker.io/library/postgres:18
+ContainerName=docmost-backup
+Secret=docmost_db_pw,type=env,target=PGPASSWORD
+Environment=PGUSER=docmost
+Environment=PGDATABASE=docmost
+Environment=PGHOST=docmost_postgres
+Environment=PGPORT=5432
+Volume=/home/pascal/docmost/docmost/:/mnt/storage:ro
+Volume=/home/pascal/docmost/backups/:/mnt/backups
+Entrypoint=/bin/bash
+Exec=-c 'pg_dump -c -U docmost | gzip > /mnt/backups/docmost-db-$(date +%%Y-%%m-%%d).tar.gz && tar -czf /mnt/backups/docmost-storage-$(date +%%Y-%%m-%%d).tar.gz /mnt/storage'
+Pod=docmost.pod
