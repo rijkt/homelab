@@ -1,6 +1,6 @@
 [Container]
 ContainerName=immich_machine_learning
-Image=ghcr.io/immich-app/immich-machine-learning:v2.5.5
+Image=ghcr.io/immich-app/immich-machine-learning:v2.7.3
 Pod=immich.pod
 Volume=/home/pascal/immich/model-cache:/cache
 
